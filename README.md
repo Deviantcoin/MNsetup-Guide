@@ -4,7 +4,8 @@ Shell script to install an [Deviant Coin Masternode](http://http://deviantcoin.i
 ***
 ## VPS Installation:  
 
-wget -q https://raw.githubusercontent.com/Realbityoda/Deviant/master/deviant_install.sh 
+wget -q https://raw.githubusercontent.com/Realbityoda/Deviant/master/deviant_install.sh
+
 bash deviant_install.sh
 ***
 
