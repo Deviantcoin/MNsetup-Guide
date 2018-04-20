@@ -63,6 +63,6 @@ systemctl is-enabled Deviantd #To check if Deviant service is enabled on boot
 Any donation is highly appreciated
 
 **DEV**: DSYJe6NJRQzMLRGnSzWwDVVcmmd8RCL9Af  
-**BTH**: qzgnck23pwfag8ucz2f0vf0j5skshtuql5hmwwjhds  
+**BCH**: qzgnck23pwfag8ucz2f0vf0j5skshtuql5hmwwjhds  
 **ETH**: 0x765eA1753A1eB7b12500499405e811f4d5164554  
 **LTC**: LNt9EQputZK8djTSZyR3jE72o7NXNrb4aB  
