@@ -1,16 +1,16 @@
 #!/bin/bash
 
--TMP_FOLDER=$(mktemp -d)
--CONFIG_FILE='Deviant.conf'
--CONFIGFOLDER='/root/.Deviant'
--COIN_DAEMON='Deviantd'
--COIN_CLI='Deviantd'
--COIN_PATH='/usr/local/bin/'
--COIN_TGZ='https://github.com/Deviantcoin/Wallet/raw/master/Deviantcoin%20(Linux)/Deviantd'
--COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
--COIN_NAME='Deviant'
--COIN_PORT=7118
--RPC_PORT=7119
+TMP_FOLDER=$(mktemp -d)
+CONFIG_FILE='Deviant.conf'
+CONFIGFOLDER='/root/.Deviant'
+COIN_DAEMON='Deviantd'
+COIN_CLI='Deviantd'
+COIN_PATH='/usr/local/bin/'
+COIN_TGZ='https://github.com/Deviantcoin/Wallet/raw/master/Deviantcoin%20(Linux)/Deviantd'
+COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
+COIN_NAME='Deviant'
+COIN_PORT=7118
+RPC_PORT=7119
 
 NODEIP=$(curl -s4 icanhazip.com)
 
