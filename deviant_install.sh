@@ -26,15 +26,15 @@ MAG='\e[1;35m'
 purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
     #kill wallet daemon
-    sudo killall mctd > /dev/null 2>&1
+    sudo killall Deviantd > /dev/null 2>&1
     #remove old ufw port allow
     sudo ufw delete allow 7118/tcp > /dev/null 2>&1
     #remove old files
-    if [ -d "~/.mct" ]; then
-        sudo rm -rf ~/.mct > /dev/null 2>&1
+    if [ -d "~/.Deviant" ]; then
+        sudo rm -rf ~/.Deviant > /dev/null 2>&1
     fi
-    #remove binaries and MCT utilities
-    cd /usr/local/bin && sudo rm mct-cli mct-tx mctd > /dev/null 2>&1 && cd
+    #remove binaries and Deviant utilities
+    cd /usr/local/bin && sudo rm Deviant-cli Deviant-tx Deviantd > /dev/null 2>&1 && cd
     echo -e "${GREEN}* Done${NONE}";
 }
 
