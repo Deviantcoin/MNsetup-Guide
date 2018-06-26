@@ -1,16 +1,16 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='Deviant.conf'
-CONFIGFOLDER='/root/.Deviant'
-COIN_DAEMON='Deviantd'
-COIN_CLI='Deviantd'
+CONFIG_FILE='deviant.conf'
+CONFIGFOLDER='/root/.DeviantCore'
+COIN_DAEMON='deviantd'
+COIN_CLI='deviant-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/Deviantcoin/Wallet/raw/master/Deviantcoin%20(Linux)/Deviantd'
+COIN_TGZ='https://github.com/Deviantcoin/Wallet/raw/master/dev-3.0.0.1-linux-Ubuntu-16.04.zip'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Deviant'
-COIN_PORT=7118
-RPC_PORT=7119
+COIN_PORT=22618
+RPC_PORT=22617
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -44,7 +44,7 @@ function download_node() {
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
-  tar xvzf $COIN_ZIP >/dev/null 2>&1
+  unzip $COIN_ZIP >/dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd ~ >/dev/null 2>&1
@@ -144,19 +144,13 @@ masternodeprivkey=$COINKEY
 
 #Addnodes
 
-addnode=51.254.165.101
-addnode=74.12.2.97
-addnode=149.28.11.174
-addnode=45.77.63.244
-addnode=174.115.27.52
-addnode=45.76.93.109
-addnode=144.202.49.240
-addnode=62.138.18.76
-addnode=85.25.119.74
-addnode=62.77.157.248
-addnode=62.77.152.111
-addnode=84.52.164.76
-addnode=80.211.162.133
+addnode=209.97.131.147
+addnode=209.97.139.20
+addnode=209.97.139.2
+addnode=206.189.155.48
+addnode=167.99.234.81
+addnode=138.197.146.236
+addnode=209.97.131.20
 
 EOF
 }
@@ -269,12 +263,12 @@ function important_information() {
  echo -e "${CYAN}Ensure Node is fully SYNCED with BLOCKCHAIN.${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "${GREEN}Usage Commands.${NC}"
- echo -e "${GREEN}Deviantd masternode status${NC}"
- echo -e "${GREEN}Deviantd getinfo.${NC}"
+ echo -e "${GREEN}deviant-cli masternode status${NC}"
+ echo -e "${GREEN}deviant-cli getinfo${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "${RED}Donations always excepted gratefully.${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${YELLOW}DEV: DSYJe6NJRQzMLRGnSzWwDVVcmmd8RCL9Af${NC}"
+ echo -e "${YELLOW}DEV: dSVL2RD33473g5RKSQMuzvjm4CgVXjC4qX${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  
  }
