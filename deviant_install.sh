@@ -26,17 +26,21 @@ MAG='\e[1;35m'
 purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
     #kill wallet daemon
-    sudo killall Deviantd > /dev/null 2>&1
+    systemctl stop $COIN_NAME.service > /dev/null 2>&1
+    sudo killall $COIN_DAEMON > /dev/null 2>&1
     #remove old ufw port allow
-    sudo ufw delete allow 7118/tcp > /dev/null 2>&1
+    sudo ufw delete allow $COIN_PORT/tcp > /dev/null 2>&1
     #remove old files
-    if [ -d "~/.Deviant" ]; then
-        sudo rm -rf ~/.Deviant > /dev/null 2>&1
-    fi
-    #remove binaries and Deviant utilities
-    cd /usr/local/bin && sudo rm Deviant-cli Deviant-tx Deviantd > /dev/null 2>&1 && cd
+	rm rm -- "$0" > /dev/null 2>&1
+	rm /root/$CONFIGFOLDER/bootstrap.dat.old > /dev/null 2>&1
+	cd /usr/local/bin && sudo rm $COIN_CLI $COIN_DAEMON > /dev/null 2>&1 && cd
+    cd /usr/bin && sudo rm $COIN_CLI $COIN_DAEMON > /dev/null 2>&1 && cd
+        sudo rm -rf ~/$CONFIGFOLDER > /dev/null 2>&1
+    #remove binaries and $COIN_NAME utilities
+    cd /usr/local/bin && sudo rm $COIN_CLI $COIN_DAEMON > /dev/null 2>&1 && cd
     echo -e "${GREEN}* Done${NONE}";
 }
+
 
 
 function download_node() {
