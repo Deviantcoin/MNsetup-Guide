@@ -110,7 +110,7 @@ If you require further assistance contact the support team @ [Discord](https://d
 
 `bash deviant_install.sh`
 
-![Example-Bash](https://i.imgur.com/myvmKTE.png)
+![Example-Bash](https://i.imgur.com/hF5Jjpc.png)
 
 ***
 
@@ -121,7 +121,7 @@ If you require further assistance contact the support team @ [Discord](https://d
 ***Step 10***
 * When prompted to enter your GEN key - press enter
 
-![Example-installing](https://i.imgur.com/sLvWd1S.png)
+![Example-installing](https://i.imgur.com/AEP8dpn.png)
 ***
 
 ***Step 11***
