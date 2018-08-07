@@ -270,10 +270,6 @@ function important_information() {
  echo -e "${GREEN}deviant-cli masternode status${NC}"
  echo -e "${GREEN}deviant-cli getinfo${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${RED}Donations always excepted gratefully.${NC}"
- echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${YELLOW}DEV: dSVL2RD33473g5RKSQMuzvjm4CgVXjC4qX${NC}"
- echo -e "${BLUE}================================================================================================================================${NC}"
  
  }
 
