@@ -262,7 +262,7 @@ function important_information() {
  echo -e "${GREEN}VPS_IP:${NC}${GREEN}$NODEIP:$COIN_PORT${NC}"
  echo -e "${GREEN}MASTERNODE GENKEY is:${NC}${PURPLE}$COINKEY${NC}"
  echo -e "${BLUE}================================================================================================================================"
- echo -e "${CYAN}Follow twitter to stay updated.  https://twitter.com/Real_Bit_Yoda${NC}"
+ echo -e "${CYAN}Follow twitter to stay updated.  https://twitter.com/DeviantCoin${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "${CYAN}Ensure Node is fully SYNCED with BLOCKCHAIN.${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
