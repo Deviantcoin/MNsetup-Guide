@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.DeviantCore'
 COIN_DAEMON='deviantd'
 COIN_CLI='deviant-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/Deviantcoin/Wallet/raw/master/dev-3.0.0.1-linux-ubuntu-16.04.zip'
+COIN_TGZ=$(curl -s https://api.github.com/repos/Deviantcoin/Source/releases/latest | grep browser_download_url | grep -e "x86_64-linux"| cut -d '"' -f 4)
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='Deviant'
 COIN_PORT=22618
@@ -48,7 +48,9 @@ function download_node() {
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
-  unzip $COIN_ZIP >/dev/null 2>&1
+  tar xzvf $COIN_ZIP >/dev/null 2>&1
+  find . -name $COIN_DAEMON | xargs mv -t $COIN_PATH >/dev/null 2>&1
+  find . -name $COIN_CLI | xargs mv -t $COIN_PATH >/dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
   cd ~ >/dev/null 2>&1
