@@ -51,8 +51,7 @@ function download_node() {
   tar xzvf $COIN_ZIP >/dev/null 2>&1
   find . -name $COIN_DAEMON | xargs mv -t $COIN_PATH >/dev/null 2>&1
   find . -name $COIN_CLI | xargs mv -t $COIN_PATH >/dev/null 2>&1
-  chmod +x $COIN_DAEMON $COIN_CLI
-  cp $COIN_DAEMON $COIN_CLI $COIN_PATH
+  chmod +x $COIN_PATH$COIN_DAEMON $COIN_PATH$COIN_CLI
   cd ~ >/dev/null 2>&1
   rm -rf $TMP_FOLDER >/dev/null 2>&1
   clear
